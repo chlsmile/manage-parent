@@ -9,4 +9,6 @@ import java.io.Serializable;
  * Date: 2016-06-28 16:35:00
  */
 public class Admin implements Serializable{
+
+    private static final long serialVersionUID = -3149775130249757535L;
 }

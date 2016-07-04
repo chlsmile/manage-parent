@@ -1,6 +1,6 @@
-package com.chlsmile.manage.auth.dao;
+package com.chlsmile.manage.role.dao;
 
-import com.chlsmile.manage.auth.domain.Role;
+import com.chlsmile.manage.role.domain.Role;
 
 /**
  * Created with: IntelliJ IDEA.

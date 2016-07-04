@@ -1,4 +1,4 @@
-package com.chlsmile.manage.auth.domain;
+package com.chlsmile.manage.role.domain;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -11,6 +11,7 @@ import java.util.Date;
  */
 public class Role implements Serializable {
 
+    private static final long serialVersionUID = 1366784162005439145L;
     /**
      * createTime 创建时间
      */

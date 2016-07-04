@@ -1,4 +1,4 @@
-package com.chlsmile.manage.auth.dao;
+package com.chlsmile.manage.menu.dao;
 
 /**
  * Created with: IntelliJ IDEA.
