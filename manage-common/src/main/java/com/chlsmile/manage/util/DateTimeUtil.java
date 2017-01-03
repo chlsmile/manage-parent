@@ -1,10 +1,12 @@
 package com.chlsmile.manage.util;
 
 /**
- * Created with: IntelliJ IDEA.
- * Function:
- * User: chl_smile
- * Date: 2016-12-20 20:45:00
+ * Function:日期时间工具类
+ *
+ * User: chl_smile@163.com
+ * Date: 2017-01-03 10:20:00
  */
 public class DateTimeUtil {
+
+
 }

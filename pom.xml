@@ -27,6 +27,8 @@
         <jcl-over-slf4j.version>1.7.20</jcl-over-slf4j.version>
         <jul-to-slf4j.version>1.7.20</jul-to-slf4j.version>
         <druid.version>1.0.27</druid.version>
+        <httpclient.version>4.5.2</httpclient.version>
+        <cglib.version>3.2.4</cglib.version>
     </properties>
 
     <dependencyManagement>
@@ -181,6 +183,16 @@
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.versions}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -304,13 +316,17 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.6.0</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
@@ -320,7 +336,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.0.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -333,7 +349,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
+                <version>2.10.4</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
