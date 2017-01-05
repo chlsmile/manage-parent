@@ -1,6 +1,6 @@
-package com.chlsmile.manage.role.service;
+package com.chlsmile.manage.framework.role.service;
 
-import com.chlsmile.manage.role.domain.Role;
+import com.chlsmile.manage.framework.role.domain.Role;
 
 import java.util.List;
 

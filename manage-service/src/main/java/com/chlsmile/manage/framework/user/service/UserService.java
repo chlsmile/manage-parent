@@ -1,4 +1,4 @@
-package com.chlsmile.manage.user.service;
+package com.chlsmile.manage.framework.user.service;
 
 /**
  * Function:

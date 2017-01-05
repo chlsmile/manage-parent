@@ -1,6 +1,6 @@
-package com.chlsmile.manage.role.dao;
+package com.chlsmile.manage.framework.role.dao;
 
-import com.chlsmile.manage.role.domain.Role;
+import com.chlsmile.manage.framework.role.domain.Role;
 
 import java.util.List;
 

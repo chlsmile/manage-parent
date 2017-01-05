@@ -1,4 +1,4 @@
-package com.chlsmile.manage.role.domain;
+package com.chlsmile.manage.framework.role.domain;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,8 +1,8 @@
-package com.chlsmile.manage.role.service.impl;
+package com.chlsmile.manage.framework.role.service.impl;
 
-import com.chlsmile.manage.role.dao.RoleDao;
-import com.chlsmile.manage.role.domain.Role;
-import com.chlsmile.manage.role.service.RoleService;
+import com.chlsmile.manage.framework.role.dao.RoleDao;
+import com.chlsmile.manage.framework.role.domain.Role;
+import com.chlsmile.manage.framework.role.service.RoleService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
