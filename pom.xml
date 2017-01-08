@@ -372,4 +372,52 @@
         </plugins>
     </build>
 
+    <profiles>
+        <!--本地环境-->
+        <profile>
+            <id>local</id>
+            <properties>
+                <mvn.jdbc.url>jdbc:mysql://localhost:3306/manage?characterEncoding=UTF-8</mvn.jdbc.url>
+                <mvn.jdbc.user>root</mvn.jdbc.user>
+                <mvn.jdbc.password>123456</mvn.jdbc.password>
+            </properties>
+        </profile>
+        <!--开发环境-->
+        <profile>
+            <id>dev</id>
+            <properties>
+                <mvn.jdbc.url></mvn.jdbc.url>
+                <mvn.jdbc.user></mvn.jdbc.user>
+                <mvn.jdbc.password></mvn.jdbc.password>
+            </properties>
+        </profile>
+        <!--测试环境-->
+        <profile>
+            <id>test</id>
+            <properties>
+                <mvn.jdbc.url></mvn.jdbc.url>
+                <mvn.jdbc.user></mvn.jdbc.user>
+                <mvn.jdbc.password></mvn.jdbc.password>
+            </properties>
+        </profile>
+        <!--预发环境-->
+        <profile>
+            <id>pre</id>
+            <properties>
+                <mvn.jdbc.url></mvn.jdbc.url>
+                <mvn.jdbc.user></mvn.jdbc.user>
+                <mvn.jdbc.password></mvn.jdbc.password>
+            </properties>
+        </profile>
+        <!--线上环境-->
+        <profile>
+            <id>product</id>
+            <properties>
+                <mvn.jdbc.url></mvn.jdbc.url>
+                <mvn.jdbc.user></mvn.jdbc.user>
+                <mvn.jdbc.password></mvn.jdbc.password>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>

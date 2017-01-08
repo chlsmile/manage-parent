@@ -30,4 +30,10 @@
         <property name="suffix" value=".ftl"/>
     </bean>
 
+   <!-- <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path=""/>
+        </mvc:interceptor>
+    </mvc:interceptors>-->
+
 </beans>
