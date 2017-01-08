@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chlsmile.manage.framework.user.dao.UserDao">
+
+    <resultMap id="userMap" type="User">
+        <id column="id" property="id" />
+        <result column="user_name" property="userName" />
+        <result column="password" property="password" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="role_id" property="roleId" />
+    </resultMap>
+
+    <insert id="addRole" parameterType="User">
+        insert into t_user(user_name,password,create_time,update_time)
+                  values(#{userName},#{password},#{createTime},#{updateTime})
+    </insert>
+
+    <update id="updateUserById" parameterType="User">
+        update t_user
+        <set>
+            <if test="userName!=null and userName!=''">
+                user_name=#{userName},
+            </if>
+            <if test="password!=null and password!=''">
+                password=#{password},
+            </if>
+            update_time=#{updateTime}
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteUserById" parameterType="long">
+        delete
+        from t_user
+        where id=#{id}
+    </delete>
+
+    <select id="findUserById" parameterType="long" resultType="userMap">
+        select *
+        from t_user
+        where id=#{id}
+    </select>
+
+    <select id="queryUser" parameterType="User" resultType="userMap">
+        select *
+        from t_user
+        <where>
+            <if test="id!=null ">
+                id=#{id}
+            </if>
+            <if test="userName!=null and userName!=''">
+                and user_name=#{userName}
+            </if>
+            <if test="roleId!=null">
+                and role_id=#{roleId}
+            </if>
+        </where>
+    </select>
+
+</mapper>

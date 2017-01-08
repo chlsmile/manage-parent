@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chlsmile.manage.framework.menu.dao.MenuDao">
+
+    <resultMap id="menuMap" type="Menu">
+        <id column="id" property="id" />
+        <result column="url_value" property="urlValue" />
+        <result column="url_name" property="urlName" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <insert id="addMenu" parameterType="Menu">
+        insert into t_menu(url_value,url_name,create_time,update_time)
+        values(#{urlValue},#{urlName},#{createTime},#{updateTime})
+    </insert>
+
+    <update id="updateMenuById" parameterType="Menu">
+        update t_menu
+        <set>
+            <if test="urlValue!=null and urlValue!=''">
+                url_value=#{urlValue},
+            </if>
+            <if test="urlName!=null and urlName!=''">
+                url_name=#{urlName},
+            </if>
+            update_time=#{updateTime}
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteMenuById" parameterType="long">
+        delete
+        from t_menu
+        where id=#{id}
+    </delete>
+
+    <select id="findMenuById" parameterType="long" resultType="menuMap">
+        select *
+        from t_menu
+        where id=#{id}
+    </select>
+
+    <select id="queryMenu" parameterType="Menu" resultType="menuMap">
+        select *
+        from t_menu
+        <where>
+            <if test="id!=null ">
+                id=#{id}
+            </if>
+            <if test="urlName!=null and urlName!=''">
+                and url_name=#{urlName}
+            </if>
+            <if test="urlValue!=null and urlValue!=''">
+                and url_value=#{urlValue}
+            </if>
+        </where>
+    </select>
+
+</mapper>

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+
+    <bean id="dataSourceManage" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.user}" />
@@ -28,5 +32,23 @@
         <!-- 配置监控统计拦截的filters -->
         <property name="filters" value="stat" />
     </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSourceManage" />
+        <property name="configLocation" value="classpath:mybatis-manage.xml" />
+        <property name="mapperLocations">
+            <list>
+                <value>classpath*:sqlmapper/*.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSourceManage" />
+    </bean>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
 
 </beans>

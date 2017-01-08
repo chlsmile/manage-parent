@@ -1,6 +1,7 @@
 package com.chlsmile.manage.framework.menu.dao;
 
 import com.chlsmile.manage.framework.menu.domain.Menu;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -8,6 +9,7 @@ import java.util.List;
  * Function:
  * User: chl_smile@163.com
  */
+@Repository
 public interface MenuDao {
 
     /**

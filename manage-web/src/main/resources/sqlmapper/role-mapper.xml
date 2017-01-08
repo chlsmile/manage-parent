@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chlsmile.manage.framework.role.dao.RoleDao">
+
+    <resultMap id="roleMap" type="Role">
+        <id column="id" property="id" />
+        <result column="role_name" property="roleName" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <insert id="addRole" parameterType="Role">
+        insert into t_role(role_name,create_time,update_time)
+        values(#{roleName},#{createTime},#{updateTime})
+    </insert>
+
+    <update id="updateRoleById" parameterType="Role">
+        update t_role
+        <set>
+            <if test="roleName!=null and roleName!=''">
+                role_name=#{roleName},
+            </if>
+            update_time=#{updateTime}
+        </set>
+        where id=#{id}
+    </update>
+
+    <delete id="deleteRoleById" parameterType="long">
+        delete
+        from t_role
+        where id=#{id}
+    </delete>
+
+    <select id="findRoleById" parameterType="long" resultType="roleMap">
+        select *
+        from t_role
+        where id=#{id}
+    </select>
+
+    <select id="queryRole" parameterType="Role" resultType="roleMap">
+        select *
+        from t_role
+        <where>
+            <if test="id!=null ">
+                id=#{id}
+            </if>
+            <if test="roleName!=null and roleName!=''">
+                and role_name=#{roleName}
+            </if>
+        </where>
+    </select>
+
+</mapper>
