@@ -30,6 +30,7 @@
         <httpclient.version>4.5.2</httpclient.version>
         <cglib.version>3.2.4</cglib.version>
         <commons-lang3.version>3.5</commons-lang3.version>
+        <junit.version>4.11</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -199,6 +200,12 @@
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
             </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -330,6 +337,10 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -380,6 +391,7 @@
                 <mvn.jdbc.url>jdbc:mysql://localhost:3306/manage?characterEncoding=UTF-8</mvn.jdbc.url>
                 <mvn.jdbc.user>root</mvn.jdbc.user>
                 <mvn.jdbc.password>123456</mvn.jdbc.password>
+                <mvn.log.home>/tmp/logs/</mvn.log.home>
             </properties>
         </profile>
         <!--开发环境-->
@@ -389,6 +401,7 @@
                 <mvn.jdbc.url></mvn.jdbc.url>
                 <mvn.jdbc.user></mvn.jdbc.user>
                 <mvn.jdbc.password></mvn.jdbc.password>
+                <mvn.log.home></mvn.log.home>
             </properties>
         </profile>
         <!--测试环境-->
@@ -398,6 +411,7 @@
                 <mvn.jdbc.url></mvn.jdbc.url>
                 <mvn.jdbc.user></mvn.jdbc.user>
                 <mvn.jdbc.password></mvn.jdbc.password>
+                <mvn.log.home></mvn.log.home>
             </properties>
         </profile>
         <!--预发环境-->
@@ -407,6 +421,7 @@
                 <mvn.jdbc.url></mvn.jdbc.url>
                 <mvn.jdbc.user></mvn.jdbc.user>
                 <mvn.jdbc.password></mvn.jdbc.password>
+                <mvn.log.home></mvn.log.home>
             </properties>
         </profile>
         <!--线上环境-->
@@ -416,6 +431,7 @@
                 <mvn.jdbc.url></mvn.jdbc.url>
                 <mvn.jdbc.user></mvn.jdbc.user>
                 <mvn.jdbc.password></mvn.jdbc.password>
+                <mvn.log.home></mvn.log.home>
             </properties>
         </profile>
     </profiles>
