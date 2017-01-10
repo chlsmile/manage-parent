@@ -9,7 +9,7 @@ import java.util.List;
  * Function:
  * User: chl_smile@163.com
  */
-@Repository
+@Repository("roleDao")
 public interface RoleDao {
 
     /**

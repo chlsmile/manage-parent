@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Function:
  * User: chl_smile@163.com
  */
-@ContextConfiguration(locations = {"classpath:applicationContext-manage.xml"})
+@ContextConfiguration(locations = {"classpath*:applicationContext-manage.xml"})
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BaseTest extends AbstractJUnit4SpringContextTests{
 }

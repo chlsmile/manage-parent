@@ -31,13 +31,13 @@
         where id=#{id}
     </delete>
 
-    <select id="findRoleById" parameterType="long" resultType="roleMap">
+    <select id="findRoleById" parameterType="long" resultMap="roleMap">
         select *
         from t_role
         where id=#{id}
     </select>
 
-    <select id="queryRole" parameterType="Role" resultType="roleMap">
+    <select id="queryRole" parameterType="Role" resultMap="roleMap">
         select *
         from t_role
         <where>

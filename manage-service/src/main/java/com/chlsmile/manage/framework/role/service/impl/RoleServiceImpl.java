@@ -6,6 +6,7 @@ import com.chlsmile.manage.framework.role.service.RoleService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +18,7 @@ import java.util.List;
  * Function:
  * User: chl_smile@163.com
  */
-@Service
+@Service("roleService")
 public class RoleServiceImpl implements RoleService {
 
     private static final Logger logger=LoggerFactory.getLogger(RoleServiceImpl.class);

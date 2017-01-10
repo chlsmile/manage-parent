@@ -35,13 +35,13 @@
         where id=#{id}
     </delete>
 
-    <select id="findMenuById" parameterType="long" resultType="menuMap">
+    <select id="findMenuById" parameterType="long" resultMap="menuMap">
         select *
         from t_menu
         where id=#{id}
     </select>
 
-    <select id="queryMenu" parameterType="Menu" resultType="menuMap">
+    <select id="queryMenu" parameterType="Menu" resultMap="menuMap">
         select *
         from t_menu
         <where>

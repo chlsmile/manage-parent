@@ -1,5 +1,7 @@
 package com.chlsmile.manage.util;
 
+import java.util.Date;
+
 /**
  * Function:日期时间工具类
  *
@@ -8,5 +10,12 @@ package com.chlsmile.manage.util;
  */
 public class DateTimeUtil {
 
-
+    /**
+     * getNow 获取当前时间
+     *
+     * @return 当前时间
+     */
+    public static Date getNow(){
+        return new Date();
+    }
 }

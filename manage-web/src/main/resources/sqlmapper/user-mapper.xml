@@ -36,13 +36,13 @@
         where id=#{id}
     </delete>
 
-    <select id="findUserById" parameterType="long" resultType="userMap">
+    <select id="findUserById" parameterType="long" resultMap="userMap">
         select *
         from t_user
         where id=#{id}
     </select>
 
-    <select id="queryUser" parameterType="User" resultType="userMap">
+    <select id="queryUser" parameterType="User" resultMap="userMap">
         select *
         from t_user
         <where>
