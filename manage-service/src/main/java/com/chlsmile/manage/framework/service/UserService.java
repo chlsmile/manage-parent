@@ -1,4 +1,4 @@
-package com.chlsmile.manage.framework.user.service;
+package com.chlsmile.manage.framework.service;
 
 import com.chlsmile.manage.framework.domain.User;
 

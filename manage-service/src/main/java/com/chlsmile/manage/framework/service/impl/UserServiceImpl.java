@@ -1,12 +1,13 @@
-package com.chlsmile.manage.framework.user.service.impl;
+package com.chlsmile.manage.framework.service.impl;
 
 import com.chlsmile.manage.framework.dao.UserDao;
 import com.chlsmile.manage.framework.domain.User;
-import com.chlsmile.manage.framework.user.service.UserService;
+import com.chlsmile.manage.framework.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**

@@ -1,8 +1,8 @@
-package com.chlsmile.manage.framework.role.service.impl;
+package com.chlsmile.manage.framework.service.impl;
 
 import com.chlsmile.manage.framework.dao.RoleDao;
 import com.chlsmile.manage.framework.domain.Role;
-import com.chlsmile.manage.framework.role.service.RoleService;
+import com.chlsmile.manage.framework.service.RoleService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 

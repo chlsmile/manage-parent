@@ -1,4 +1,4 @@
-package com.chlsmile.manage.framework.menu.service;
+package com.chlsmile.manage.framework.service;
 
 /**
  * Function:

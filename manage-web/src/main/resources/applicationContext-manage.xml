@@ -62,7 +62,6 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <property name="configLocation" value="classpath:mybatis-manage.xml" />
         <property name="mapperLocations">
             <list>
                 <value>classpath:sqlmapper/*-mapper.xml</value>
@@ -71,8 +70,8 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.chlsmile.manage" />
-        <property name="annotationClass"  value="com.chlsmile.manage.annotation.Mapper"/>
+        <property name="basePackage" value="com.chlsmile.manage.framework.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
     <bean id="transactionManager"

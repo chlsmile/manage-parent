@@ -23,7 +23,6 @@
         <slf4j-api.version>1.7.20</slf4j-api.version>
         <logback.version>1.1.7</logback.version>
         <joda-time.version>2.9.3</joda-time.version>
-        <log4j-over-slf4j.version>1.5.10</log4j-over-slf4j.version>
         <jcl-over-slf4j.version>1.7.20</jcl-over-slf4j.version>
         <jul-to-slf4j.version>1.7.20</jul-to-slf4j.version>
         <druid.version>1.0.27</druid.version>
@@ -31,6 +30,7 @@
         <cglib.version>3.2.4</cglib.version>
         <commons-lang3.version>3.5</commons-lang3.version>
         <junit.version>4.12</junit.version>
+        <mysql-connector-java.version>5.1.40</mysql-connector-java.version>
     </properties>
 
     <dependencyManagement>
@@ -127,11 +127,6 @@
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
-                <artifactId>log4j-over-slf4j</artifactId>
-                <version>${log4j-over-slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${jcl-over-slf4j.version}</version>
             </dependency>
@@ -171,7 +166,13 @@
                 <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
     <build>
         <plugins>

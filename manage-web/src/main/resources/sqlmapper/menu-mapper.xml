@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.chlsmile.manage.framework.dao.MenuDao">
 
-    <resultMap id="menuMap" type="Menu">
+    <resultMap id="menuMap" type="com.chlsmile.manage.framework.domain.Menu">
         <id column="id" property="id" />
         <result column="url_value" property="urlValue" />
         <result column="url_name" property="urlName" />
@@ -10,12 +10,12 @@
         <result column="update_time" property="updateTime" />
     </resultMap>
 
-    <insert id="addMenu" parameterType="Menu">
+    <insert id="addMenu" parameterType="com.chlsmile.manage.framework.domain.Menu">
         insert into t_menu(url_value,url_name,create_time,update_time)
         values(#{urlValue},#{urlName},#{createTime},#{updateTime})
     </insert>
 
-    <update id="updateMenuById" parameterType="Menu">
+    <update id="updateMenuById" parameterType="com.chlsmile.manage.framework.domain.Menu">
         update t_menu
         <set>
             <if test="urlValue!=null and urlValue!=''">

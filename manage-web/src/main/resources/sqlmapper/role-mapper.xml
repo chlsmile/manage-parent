@@ -2,19 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.chlsmile.manage.framework.dao.RoleDao">
 
-    <resultMap id="roleMap" type="Role">
+    <resultMap id="roleMap" type="com.chlsmile.manage.framework.domain.Role">
         <id column="id" property="id" />
         <result column="role_name" property="roleName" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
     </resultMap>
 
-    <insert id="addRole" parameterType="Role">
+    <insert id="addRole" parameterType="com.chlsmile.manage.framework.domain.Role">
         insert into t_role(role_name,create_time,update_time)
         values(#{roleName},#{createTime},#{updateTime})
     </insert>
 
-    <update id="updateRoleById" parameterType="Role">
+    <update id="updateRoleById" parameterType="com.chlsmile.manage.framework.domain.Role">
         update t_role
         <set>
             <if test="roleName!=null and roleName!=''">
@@ -37,7 +37,7 @@
         where id=#{id}
     </select>
 
-    <select id="queryRole" parameterType="Role" resultMap="roleMap">
+    <select id="queryRole" parameterType="com.chlsmile.manage.framework.domain.Role" resultMap="roleMap">
         select *
         from t_role
         <where>

@@ -2,7 +2,7 @@ package com.chlsmile.manage.user.service;
 
 import com.chlsmile.manage.common.BaseTest;
 import com.chlsmile.manage.framework.domain.User;
-import com.chlsmile.manage.framework.user.service.UserService;
+import com.chlsmile.manage.framework.service.UserService;
 import com.chlsmile.manage.util.DateTimeUtil;
 import com.chlsmile.manage.util.EncryptUtil;
 import org.junit.Test;
@@ -26,7 +26,7 @@ public class UserServiceTest extends BaseTest{
         user.setPassword(EncryptUtil.sha1Hex("123456"));
         user.setCreateTime(DateTimeUtil.getNow());
         user.setUpdateTime(DateTimeUtil.getNow());
-        user.setUserName("chl_smile");
+        user.setUserName("admin");
         user.setRoleId(1L);
         userService.addUser(user);
     }
