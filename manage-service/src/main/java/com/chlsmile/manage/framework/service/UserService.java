@@ -21,10 +21,10 @@ public interface UserService {
     /**
      * updateUserById 根据用户id更新一条用户记录
      *
-     * @param id 用户id
+     * @param user 用户
      *
      */
-    void updateUserById(Long id);
+    void updateUserById(User user);
 
     /**
      * deleteUserById 根据用户id删除一条用户记录

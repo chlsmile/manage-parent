@@ -23,11 +23,11 @@ public interface UserDao {
     /**
      * updateUserById 根据用户id更新一条用户记录
      *
-     * @param id 用户id
+     * @param user 用户
      *
      * @return 影响行数
      */
-    int updateUserById(Long id);
+    int updateUserById(User user);
 
     /**
      * deleteUserById 根据用户id删除一条用户记录

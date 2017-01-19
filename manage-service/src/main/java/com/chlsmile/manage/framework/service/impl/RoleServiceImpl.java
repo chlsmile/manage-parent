@@ -1,8 +1,11 @@
 package com.chlsmile.manage.framework.service.impl;
 
+import com.chlsmile.manage.exception.InsertDbException;
+import com.chlsmile.manage.exception.UpdateDbException;
 import com.chlsmile.manage.framework.dao.RoleDao;
 import com.chlsmile.manage.framework.domain.Role;
 import com.chlsmile.manage.framework.service.RoleService;
+import com.chlsmile.manage.util.DateTimeUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,26 +31,27 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void addRole(Role role) {
         if(role==null){
-            throw new RuntimeException("addRole exception role is null");
+            throw new InsertDbException("addRole exception role is null");
         }
         if(StringUtils.isEmpty(role.getRoleName())){
-            throw new RuntimeException("addRole exception roleName is empty");
+            throw new InsertDbException("addRole exception roleName is empty");
         }
 
-        Date nowTime=new Date();
+        Date nowTime= DateTimeUtil.getNow();
         if(role.getCreateTime()==null){
             role.setCreateTime(nowTime);
         }
         if(role.getUpdateTime()==null){
             role.setUpdateTime(nowTime);
         }
+        roleDao.addRole(role);
     }
 
     @Override
     @Transactional
     public void updateRoleById(Role role) {
         if(role==null){
-            throw new RuntimeException("updateRoleById exception role is null");
+            throw new UpdateDbException("updateRoleById exception role is null");
         }
         if(role.getId()==null){
             throw new RuntimeException("updateRoleById exception id is null");
