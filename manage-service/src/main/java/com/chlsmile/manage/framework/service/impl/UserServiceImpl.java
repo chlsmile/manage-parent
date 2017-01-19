@@ -4,6 +4,7 @@ import com.chlsmile.manage.framework.dao.UserDao;
 import com.chlsmile.manage.framework.domain.User;
 import com.chlsmile.manage.framework.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * Function:
  * User: chl_smile@163.com
  */
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService{
 
     @Autowired

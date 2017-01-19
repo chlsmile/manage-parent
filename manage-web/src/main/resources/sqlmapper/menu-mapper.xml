@@ -41,7 +41,7 @@
         where id=#{id}
     </select>
 
-    <select id="queryMenu" parameterType="Menu" resultMap="menuMap">
+    <select id="queryMenu" parameterType="com.chlsmile.manage.framework.domain.Menu" resultMap="menuMap">
         select *
         from t_menu
         <where>

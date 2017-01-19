@@ -1,5 +1,6 @@
 package com.chlsmile.manage.framework.dao;
 
+import com.chlsmile.manage.annotation.Mapper;
 import com.chlsmile.manage.framework.domain.Menu;
 import org.springframework.stereotype.Repository;
 

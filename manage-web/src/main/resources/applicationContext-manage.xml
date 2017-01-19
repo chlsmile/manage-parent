@@ -70,8 +70,8 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.chlsmile.manage.framework.dao" />
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <property name="basePackage" value="com.chlsmile.manage" />
+        <property name="annotationClass" value="org.springframework.stereotype.Repository"/>
     </bean>
 
     <bean id="transactionManager"

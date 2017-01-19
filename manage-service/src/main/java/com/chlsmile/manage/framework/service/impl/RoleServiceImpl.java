@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +17,7 @@ import java.util.List;
  * Function:
  * User: chl_smile@163.com
  */
-@Service("roleService")
+@Service
 public class RoleServiceImpl implements RoleService {
 
     private static final Logger logger=LoggerFactory.getLogger(RoleServiceImpl.class);

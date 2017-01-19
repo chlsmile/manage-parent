@@ -26,7 +26,7 @@ public class UserServiceTest extends BaseTest{
         user.setPassword(EncryptUtil.sha1Hex("123456"));
         user.setCreateTime(DateTimeUtil.getNow());
         user.setUpdateTime(DateTimeUtil.getNow());
-        user.setUserName("admin");
+        user.setUserName("admin1");
         user.setRoleId(1L);
         userService.addUser(user);
     }
