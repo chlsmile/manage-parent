@@ -1,4 +1,4 @@
-package com.chlsmile.manage.framework.menu.domain;
+package com.chlsmile.manage.framework.domain;
 
 import java.io.Serializable;
 import java.util.Date;

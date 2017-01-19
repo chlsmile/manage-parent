@@ -1,6 +1,6 @@
 package com.chlsmile.manage.framework.user.service;
 
-import com.chlsmile.manage.framework.user.domain.User;
+import com.chlsmile.manage.framework.domain.User;
 
 import java.util.List;
 

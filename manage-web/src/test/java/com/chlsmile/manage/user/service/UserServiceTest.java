@@ -1,7 +1,7 @@
 package com.chlsmile.manage.user.service;
 
 import com.chlsmile.manage.common.BaseTest;
-import com.chlsmile.manage.framework.user.domain.User;
+import com.chlsmile.manage.framework.domain.User;
 import com.chlsmile.manage.framework.user.service.UserService;
 import com.chlsmile.manage.util.DateTimeUtil;
 import com.chlsmile.manage.util.EncryptUtil;

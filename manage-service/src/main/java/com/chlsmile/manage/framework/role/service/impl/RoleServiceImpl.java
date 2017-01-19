@@ -1,7 +1,7 @@
 package com.chlsmile.manage.framework.role.service.impl;
 
-import com.chlsmile.manage.framework.role.dao.RoleDao;
-import com.chlsmile.manage.framework.role.domain.Role;
+import com.chlsmile.manage.framework.dao.RoleDao;
+import com.chlsmile.manage.framework.domain.Role;
 import com.chlsmile.manage.framework.role.service.RoleService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +22,7 @@ public class RoleServiceImpl implements RoleService {
 
     private static final Logger logger=LoggerFactory.getLogger(RoleServiceImpl.class);
 
-    @Resource
+    @Autowired
     private RoleDao roleDao;
 
     @Override

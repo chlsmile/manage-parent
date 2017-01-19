@@ -1,7 +1,7 @@
 package com.chlsmile.manage.framework.user.service.impl;
 
-import com.chlsmile.manage.framework.user.dao.UserDao;
-import com.chlsmile.manage.framework.user.domain.User;
+import com.chlsmile.manage.framework.dao.UserDao;
+import com.chlsmile.manage.framework.domain.User;
 import com.chlsmile.manage.framework.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

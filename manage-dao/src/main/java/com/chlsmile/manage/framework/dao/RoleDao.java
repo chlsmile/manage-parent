@@ -1,6 +1,7 @@
-package com.chlsmile.manage.framework.role.dao;
+package com.chlsmile.manage.framework.dao;
 
-import com.chlsmile.manage.framework.role.domain.Role;
+import com.chlsmile.manage.annotation.Mapper;
+import com.chlsmile.manage.framework.domain.Role;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  * Function:
  * User: chl_smile@163.com
  */
-@Repository("roleDao")
+@Mapper
 public interface RoleDao {
 
     /**
