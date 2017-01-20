@@ -2,11 +2,11 @@
 <configuration scan="true" scanPeriod="30 seconds">
 
     <property name="LOG_HOME" value="/tmp/logs/" />
-    <property name="LOG_PATTERN"></property>
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg - %replace(%ex){'\n','---'} %nopex %n" />
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} [U%X{fundInfo.account}][%X{request.uri}] - %msg%n</pattern>
+            <pattern>${LOG_PATTERN}</pattern>
         </encoder>
     </appender>
 
@@ -41,7 +41,12 @@
     </appender>
 
     <!-- 指定logger的名称-->
-    <logger name="com.chlsmile.manage" level="INFO" additivity="false"/>
+    <logger name="com.chlsmile.manage" level="INFO" additivity="true"/>
+    <logger name="druid.sql.DataSource" level="DEBUG" additivity="true" />
+    <logger name="druid.sql.Connection" level="DEBUG" additivity="true" />
+    <logger name="druid.sql.Statement" level="DEBUG" additivity="true" />
+    <logger name="druid.sql.ResultSet" level="DEBUG" additivity="true" />
+    druid.sql.Connection
 
     <root level="INFO">
         <appender-ref ref="STDOUT" />

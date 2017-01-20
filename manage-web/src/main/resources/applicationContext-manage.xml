@@ -25,8 +25,14 @@
     </bean>
 
 
-    <bean id="statFilter" class="com.alibaba.druid.filter.stat.StatFilter" />
-    <bean id="slf4jLogFilter" class="com.alibaba.druid.filter.logging.Slf4jLogFilter" />
+   <!-- <bean id="statFilter" class="com.alibaba.druid.filter.stat.StatFilter" >
+        <property name="slowSqlMillis" value="6000" />
+        <property name="logSlowSql" value="true" />
+    </bean>-->
+
+    <bean id="slf4jLogFilter" class="com.alibaba.druid.filter.logging.Slf4jLogFilter" >
+       <!-- <property name="statementExecutableSqlLogEnable" value="true" />-->
+    </bean>
 
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -54,7 +60,7 @@
         <!-- 配置监控统计拦截的filters -->
         <property name="proxyFilters">
             <list>
-                <ref bean="statFilter" />
+                <!--<ref bean="statFilter" />-->
                 <ref bean="slf4jLogFilter"/>
             </list>
         </property>
