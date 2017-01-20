@@ -7,7 +7,6 @@ package com.chlsmile.manage.exception;
 public class DeleteDbException extends RuntimeException {
 
     public DeleteDbException() {
-        super();
     }
 
     public DeleteDbException(String message) {

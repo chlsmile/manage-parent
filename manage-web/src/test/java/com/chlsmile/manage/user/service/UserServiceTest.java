@@ -30,4 +30,18 @@ public class UserServiceTest extends BaseTest{
         user.setRoleId(1L);
         userService.addUser(user);
     }
+
+    @Test
+    public void updateUserByIdTest(){
+        User user=new User();
+        user.setId(2L);
+        user.setUserName("admin39");
+        user.setRoleId(2L);
+        user.setPassword(EncryptUtil.sha1Hex("123456789"));
+        userService.updateUserById(user);
+    }
+
+
+
+
 }

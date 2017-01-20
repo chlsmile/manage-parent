@@ -2,6 +2,7 @@ package com.chlsmile.manage.framework.service.impl;
 
 import com.chlsmile.manage.exception.DeleteDbException;
 import com.chlsmile.manage.exception.InsertDbException;
+import com.chlsmile.manage.exception.ParameterException;
 import com.chlsmile.manage.exception.UpdateDbException;
 import com.chlsmile.manage.framework.dao.UserDao;
 import com.chlsmile.manage.framework.domain.User;
@@ -28,7 +29,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public void addUser(User user) {
         if(user==null){
-            throw new InsertDbException("addUser exception user is null");
+            throw new ParameterException("addUser exception user is null");
         }
         if(user.getCreateTime()==null){
             user.setCreateTime(DateTimeUtil.getNow());
@@ -42,6 +43,15 @@ public class UserServiceImpl implements UserService{
     @Override
     @Transactional
     public void updateUserById(User user) {
+        if(user==null){
+            throw new ParameterException("updateUserById exception user is null");
+        }
+        if(user.getId()==null){
+            throw new ParameterException("updateUserById exception user id is null");
+        }
+        if(user.getUpdateTime()==null){
+            user.setUpdateTime(DateTimeUtil.getNow());
+        }
         int updateResult=userDao.updateUserById(user);
         if(updateResult!=1){
             throw new UpdateDbException("updateUserById exception updateResult is "+updateResult+", user:"+user);

@@ -7,7 +7,6 @@ package com.chlsmile.manage.exception;
 public class UpdateDbException extends RuntimeException {
 
     public UpdateDbException(){
-        super();
     }
 
     public UpdateDbException(String message){

@@ -25,6 +25,9 @@
             <if test="password!=null and password!=''">
                 password=#{password},
             </if>
+            <if test="roleId!=null">
+                role_id=#{roleId},
+            </if>
             update_time=#{updateTime}
         </set>
         where id=#{id}

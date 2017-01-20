@@ -8,7 +8,6 @@ public class InsertDbException extends RuntimeException {
 
 
     public InsertDbException() {
-        super();
     }
 
     public InsertDbException(String message) {
