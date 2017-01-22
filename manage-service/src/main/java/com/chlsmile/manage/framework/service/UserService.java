@@ -51,4 +51,23 @@ public interface UserService {
      * @return 用户列表
      */
     List<User> queryUser(User user);
+
+    /**
+     * getCount 获取符合条件得总记录数
+     *
+     * @param user
+     * @return
+     */
+    int getCount(User user);
+
+    /**
+     * pageUser 分页查询用户数据
+     *
+     * @param user
+     * @param pageStart
+     * @param pageSize
+     * @return
+     */
+    List<User> pageUser(User user, int pageStart, int pageSize);
+
 }

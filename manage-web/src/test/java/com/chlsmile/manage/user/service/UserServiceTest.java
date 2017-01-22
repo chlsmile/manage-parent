@@ -1,13 +1,11 @@
 package com.chlsmile.manage.user.service;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import com.chlsmile.manage.common.BaseTest;
 import com.chlsmile.manage.framework.domain.User;
 import com.chlsmile.manage.framework.service.UserService;
 import com.chlsmile.manage.util.DateTimeUtil;
 import com.chlsmile.manage.util.EncryptUtil;
 import com.chlsmile.manage.util.GsonUtil;
-import com.google.gson.Gson;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -65,6 +63,16 @@ public class UserServiceTest extends BaseTest{
         System.out.println(GsonUtil.toJsonString(userList));
     }
 
+    @Test
+    public void pageUserTest(){
+        List<User> userList=userService.pageUser(null,1,5);
+        System.out.println(GsonUtil.toJsonString(userList));
+    }
+
+    @Test
+    public void getCountTest(){
+        System.out.println(userService.getCount(null));
+    }
 
 
 

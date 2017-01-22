@@ -61,4 +61,43 @@
         </where>
     </select>
 
+    <select id="getCount" resultType="int">
+        select count(*)
+        from t_user
+        <where>
+            <if test="id!=null ">
+                id=#{id}
+            </if>
+            <if test="userName!=null and userName!=''">
+                and user_name=#{userName}
+            </if>
+            <if test="roleId!=null">
+                and role_id=#{roleId}
+            </if>
+        </where>
+    </select>
+
+    <select id="pageUser" resultMap="userMap">
+        select *
+        from t_user
+        <where>
+            <if test="user!=null">
+                <if test="user.id!=null ">
+                    id=#{user.id}
+                </if>
+                <if test="user.userName!=null and user.userName!=''">
+                    and user_name=#{user.userName}
+                </if>
+                <if test="user.roleId!=null">
+                    and role_id=#{user.roleId}
+                </if>
+            </if>
+        </where>
+        limit #{pageQuery.offSet},#{pageQuery.limit}
+    </select>
+
+
+
+
+
 </mapper>

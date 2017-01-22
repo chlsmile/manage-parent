@@ -1,7 +1,9 @@
 package com.chlsmile.manage.framework.dao;
 
 import com.chlsmile.manage.annotation.Mapper;
+import com.chlsmile.manage.common.PageQuery;
 import com.chlsmile.manage.framework.domain.User;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -55,4 +57,24 @@ public interface UserDao {
      * @return 用户列表
      */
     List<User> queryUser(User user);
+
+    /**
+     * getCount 获取符合条件得总记录数
+     *
+     * @param user
+     *
+     * @return 符合条件得总记录数
+     */
+    int getCount(User user);
+
+    /**
+     * pageUser 分页查询用户信息
+     *
+     * @param user
+     * @param pageQuery
+     *
+     * @return 分页列表
+     */
+    List<User> pageUser(@Param("user") User user, @Param("pageQuery") PageQuery pageQuery);
+
 }

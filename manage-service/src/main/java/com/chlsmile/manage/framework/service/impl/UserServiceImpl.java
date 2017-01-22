@@ -8,6 +8,7 @@ import com.chlsmile.manage.framework.dao.UserDao;
 import com.chlsmile.manage.framework.domain.User;
 import com.chlsmile.manage.framework.service.UserService;
 import com.chlsmile.manage.util.DateTimeUtil;
+import com.chlsmile.manage.util.PageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -78,5 +79,15 @@ public class UserServiceImpl implements UserService{
     @Override
     public List<User> queryUser(User user) {
         return userDao.queryUser(user);
+    }
+
+    @Override
+    public int getCount(User user) {
+        return userDao.getCount(user);
+    }
+
+    @Override
+    public List<User> pageUser(User user, int pageStart, int pageSize) {
+        return userDao.pageUser(user, PageUtil.getPageQuery(pageStart,pageSize));
     }
 }
