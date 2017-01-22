@@ -45,7 +45,7 @@
     <logger name="druid.sql.DataSource" level="DEBUG" additivity="true" />
     <!--<logger name="druid.sql.Connection" level="DEBUG" additivity="true" />-->
     <logger name="druid.sql.Statement" level="DEBUG" additivity="true" />
-    <logger name="druid.sql.ResultSet" level="DEBUG" additivity="true" />
+    <!--<logger name="druid.sql.ResultSet" level="DEBUG" additivity="true" />-->
     druid.sql.Connection
 
     <root level="INFO">
