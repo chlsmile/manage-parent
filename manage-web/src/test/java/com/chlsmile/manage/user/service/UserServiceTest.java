@@ -41,7 +41,10 @@ public class UserServiceTest extends BaseTest{
         userService.updateUserById(user);
     }
 
-
+    @Test
+    public void deleteUserByIdTest(){
+        userService.deleteUserById(100L);
+    }
 
 
 }

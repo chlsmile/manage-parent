@@ -61,6 +61,9 @@ public class UserServiceImpl implements UserService{
     @Override
     @Transactional
     public void deleteUserById(Long id) {
+        if(id==null){
+            throw new ParameterException("deleteUserById exception id is null");
+        }
         int deleteResult=userDao.deleteUserById(id);
         if(deleteResult!=1){
             throw new DeleteDbException("deleteUserById exception deleteResult is "+deleteResult+", id is "+id);

@@ -43,7 +43,7 @@
     <!-- 指定logger的名称-->
     <logger name="com.chlsmile.manage" level="INFO" additivity="true"/>
     <logger name="druid.sql.DataSource" level="DEBUG" additivity="true" />
-    <logger name="druid.sql.Connection" level="DEBUG" additivity="true" />
+    <!--<logger name="druid.sql.Connection" level="DEBUG" additivity="true" />-->
     <logger name="druid.sql.Statement" level="DEBUG" additivity="true" />
     <logger name="druid.sql.ResultSet" level="DEBUG" additivity="true" />
     druid.sql.Connection

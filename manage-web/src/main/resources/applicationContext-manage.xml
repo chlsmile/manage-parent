@@ -25,13 +25,18 @@
     </bean>
 
 
-   <!-- <bean id="statFilter" class="com.alibaba.druid.filter.stat.StatFilter" >
-        <property name="slowSqlMillis" value="6000" />
+    <bean id="statFilter" class="com.alibaba.druid.filter.stat.StatFilter" >
+        <property name="slowSqlMillis" value="200" />
         <property name="logSlowSql" value="true" />
-    </bean>-->
+    </bean>
 
     <bean id="slf4jLogFilter" class="com.alibaba.druid.filter.logging.Slf4jLogFilter" >
-       <!-- <property name="statementExecutableSqlLogEnable" value="true" />-->
+        <property name="statementExecutableSqlLogEnable" value="true" />
+        <property name="statementExecuteAfterLogEnabled" value="false" />
+        <property name="statementParameterClearLogEnable" value="false" />
+        <property name="statementParameterSetLogEnabled" value="false" />
+        <property name="statementPrepareCallAfterLogEnabled" value="false" />
+        <property name="statementPrepareAfterLogEnabled"  value="false"/>
     </bean>
 
 
@@ -60,7 +65,7 @@
         <!-- 配置监控统计拦截的filters -->
         <property name="proxyFilters">
             <list>
-                <!--<ref bean="statFilter" />-->
+                <ref bean="statFilter" />
                 <ref bean="slf4jLogFilter"/>
             </list>
         </property>
